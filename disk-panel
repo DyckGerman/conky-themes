@@ -51,8 +51,10 @@ color0 777777
 
 TEXT
 
-${color0}Disk read ${color0}${alignr}${diskio_read /dev/sda1}
-${diskiograph_read /dev/sda1 80,}
-${color0}Disk write ${color0}${alignr}${diskio_write /dev/sda1}
-${diskiograph_write /dev/sda1 80,}
+${color0}SSD ${color0}${alignr}${diskio /dev/sda1}
+${color0}read ${diskio_read /dev/sda1} ${color0}${alignr}write ${diskio_write /dev/sda1}
+${diskiograph_read /dev/sda1 80,85} ${diskiograph_write /dev/sda1 80,0}
+${color0}HDD ${color0}${alignr}${diskio /dev/sdb1}
+${color0}read ${diskio_read /dev/sdb1} ${color0}${alignr}write ${diskio_write /dev/sdb1}
+${diskiograph_read /dev/sdb1 80,85} ${diskiograph_write /dev/sdb1 80,0}
 
